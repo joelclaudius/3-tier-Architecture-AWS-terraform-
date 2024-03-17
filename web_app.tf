@@ -1,7 +1,7 @@
 resource "aws_instance" "web-server" {
-  ami                    = "ami-0c7217cdde317cfec"
+  ami                    = "ami-02d7fd1c2af6eead0"
   instance_type          = "t3.micro"
-  key_name               = "web-server-bastion"
+  key_name               = "asg"
   subnet_id              = aws_subnet.web-private-a.id
   vpc_security_group_ids = [aws_security_group.web-app-security-group.id]
   iam_instance_profile   = aws_iam_instance_profile.server_profile.name
